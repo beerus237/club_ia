@@ -195,16 +195,7 @@ const formData = ref({
 const submitted = ref(false)
 const openFaq = ref(null)
 
-const annonce = `🎉🎉🎉 Vous pouvez désormais suivre l'intégralité de l'actualité 🌐 du CIA sur nos plateformes :
---- GitHub : https://github.com/ClubIntelligenceArtificielle
---- Instagram : https://www.instagram.com/clubiaenspd?utm_source=qr&igsh=Z3Vnd2tiNW9qY2hj
---- Facebook : https://www.facebook.com/profile.php?id=61585659006581
---- Chaîne YouTube : https://youtube.com/@clubia-enspd?si=_FchjOZt46t7VjRn
---- Chaîne Telegram : https://t.me/Club_IA_ENSPD
---- X (Twitter) : https://x.com/clubia_enspd
---- Chaîne WhatsApp : https://whatsapp.com/channel/0029Vb9p1ldAojYus9XU9r2W
-
-🔥 Surtout n'hésitez pas à vous abonner ✅ et à liker ❤️ nos publications 💯`
+const annonce = ``
 
 const canaux = [
   {
