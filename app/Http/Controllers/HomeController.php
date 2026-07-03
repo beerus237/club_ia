@@ -51,7 +51,7 @@ class HomeController extends Controller
                 'name' => 'LIZA Enone Ngoh Loice',
                 'position' => 'Secrétaire général',
                 'bio' => 'Elle coordonne les échanges, les documents et l’organisation du club avec précision et dynamisme.',
-                'photo_url' => '/images/membres/LIZA ENONE NGOH LOICE-Secretaire General .jpg',
+                'photo_url' => '/images/membres/LIZA.jpg',
             ],
             [
                 'name' => 'MOLADEL Munpubuyi Ivana Karla',
@@ -81,7 +81,7 @@ class HomeController extends Controller
                 'name' => 'KOUONANG NJOUONANG Yves Thierry',
                 'position' => 'Chef département Marketing & Services',
                 'bio' => 'Il élabore les stratégies de communication et de marketing pour promouvoir le club et ses projets.',
-                'photo_url' => '/images/membres/KOUONANG NJOUONANG YVES THIERRY-Chef Departement Marketing et Services.jpg',
+                'photo_url' => '/images/membres/KOUONANG.jpg',
             ],
             [
                 'name' => 'TCHINDA DJATE Hurchill',
