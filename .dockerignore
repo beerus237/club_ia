@@ -1,0 +1,16 @@
+.git
+.gitignore
+node_modules
+vendor
+public/build
+public/storage
+storage/logs/*.log
+storage/framework/cache/data/*
+storage/framework/sessions/*
+storage/framework/views/*
+.env
+.env.example
+*.md
+tests
+.vscode
+.idea

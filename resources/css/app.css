@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   Design tokens & base
+   ========================================================================== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-slate-700 antialiased;
+  }
+
+  ::selection {
+    @apply bg-brand-200 text-brand-900;
+  }
+
+  /* Slim, brand-colored scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-brand-50;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-brand-300;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-brand-400;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-400 ring-offset-2 ring-offset-white;
+  }
+}
+
+/* ==========================================================================
+   Reusable component classes — single source of truth for visual language
+   ========================================================================== */
+@layer components {
+  /* --- Buttons --- */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold
+           transition-all duration-300 ease-smooth disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-brand-gradient text-white shadow-card hover:-translate-y-0.5 hover:shadow-card-hover active:translate-y-0;
+  }
+  .btn-secondary {
+    @apply btn border border-brand-200 bg-white text-brand-700 shadow-soft hover:-translate-y-0.5 hover:border-brand-300 hover:bg-brand-50;
+  }
+  .btn-ghost {
+    @apply btn text-slate-600 hover:bg-brand-50 hover:text-brand-700;
+  }
+  .btn-danger {
+    @apply btn bg-rose-600 text-white shadow-soft hover:-translate-y-0.5 hover:bg-rose-700;
+  }
+  .btn-sm {
+    @apply px-3.5 py-2 text-xs;
+  }
+  .btn-icon {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-xl border border-brand-100 bg-white text-slate-500
+           transition-all duration-300 ease-smooth hover:-translate-y-0.5 hover:border-brand-300 hover:text-brand-700 hover:shadow-soft;
+  }
+
+  /* --- Surfaces --- */
+  .surface-card {
+    @apply rounded-[1.75rem] border border-brand-100/80 bg-white shadow-[0_20px_60px_-15px_rgba(8,65,130,0.12)] transition-all duration-500 ease-smooth;
+  }
+  .surface-card-hover {
+    @apply surface-card hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-[0_30px_80px_-15px_rgba(8,65,130,0.22)];
+  }
+  .surface-muted {
+    @apply rounded-[1.75rem] border border-brand-100 bg-brand-50/60;
+  }
+
+  /* --- Floating glassmorphism badge, as seen in the homepage hero --- */
+  .badge-float {
+    @apply inline-flex items-center gap-3 rounded-full border border-brand-100 bg-white/90 px-4 py-2 text-sm font-medium text-brand-700 shadow-soft backdrop-blur-xl;
+  }
+
+  /* --- Premium icon tile with glow-on-hover, used for feature/card icons --- */
+  .icon-tile {
+    @apply relative flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-gradient text-white shadow-[0_15px_35px_-8px_rgba(0,121,196,0.5)] transition-transform duration-500 group-hover:scale-110;
+  }
+
+  /* --- Section headers (used identically on every public page) --- */
+  .section-eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-4 py-1.5
+           text-xs font-bold uppercase tracking-[0.2em] text-brand-700;
+  }
+  .section-title {
+    @apply mt-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl;
+  }
+  .section-subtitle {
+    @apply mx-auto mt-4 max-w-3xl text-base leading-7 text-slate-500 sm:text-lg;
+  }
+  .page-hero {
+    @apply relative isolate overflow-hidden bg-gradient-to-br from-white via-sky-50 to-blue-50;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at top left, rgba(56, 189, 248, 0.25), transparent 32%),
+      radial-gradient(circle at bottom right, rgba(37, 99, 235, 0.18), transparent 28%);
+  }
+  .page-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.5;
+    background-image: radial-gradient(rgba(14, 116, 144, 0.14) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .page-hero-orb-1 {
+    @apply pointer-events-none absolute -left-16 -top-16 h-72 w-72 rounded-full bg-sky-300/30 blur-3xl;
+  }
+  .page-hero-orb-2 {
+    @apply pointer-events-none absolute -bottom-20 -right-16 h-80 w-80 rounded-full bg-blue-400/20 blur-3xl;
+  }
+
+  /* --- Badges (status pills, semantic colors only) --- */
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold;
+  }
+  .badge-brand {
+    @apply badge bg-brand-100 text-brand-700;
+  }
+  .badge-success {
+    @apply badge bg-emerald-100 text-emerald-700;
+  }
+  .badge-warning {
+    @apply badge bg-amber-100 text-amber-700;
+  }
+  .badge-danger {
+    @apply badge bg-rose-100 text-rose-700;
+  }
+  .badge-neutral {
+    @apply badge bg-slate-100 text-slate-600;
+  }
+
+  /* --- Forms --- */
+  .field-label {
+    @apply mb-1.5 block text-sm font-semibold text-slate-700;
+  }
+  .field-input {
+    @apply block w-full rounded-xl border-slate-200 bg-white text-sm text-slate-800 shadow-soft transition-all duration-200
+           placeholder:text-slate-400 focus:border-brand-400 focus:ring-brand-400;
+  }
+  .field-hint {
+    @apply mt-1.5 text-xs text-slate-400;
+  }
+  .field-error {
+    @apply mt-1.5 text-xs font-medium text-rose-600;
+  }
+
+  /* --- Admin tables --- */
+  .table-admin {
+    @apply min-w-full divide-y divide-slate-100 text-sm;
+  }
+  .table-admin thead th {
+    @apply bg-brand-50/70 px-4 py-3 text-left text-xs font-bold uppercase tracking-wider text-brand-700;
+  }
+  .table-admin tbody td {
+    @apply px-4 py-3.5 text-slate-600;
+  }
+  .table-admin tbody tr {
+    @apply transition-colors duration-200 hover:bg-brand-50/50;
+  }
+
+  /* --- Text helpers --- */
+  .text-gradient-brand {
+    @apply bg-brand-gradient bg-clip-text text-transparent;
+  }
+}
+
+/* ==========================================================================
+   Animations & scroll-reveal
+   ========================================================================== */
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  /* Elements with [data-reveal] start hidden; the global reveal directive
+     (resources/js/directives/reveal.js) toggles .is-visible on scroll-into-view. */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  [data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-reveal].is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Inertia page transition: fades + lifts the page container on every navigation */
+.page-transition-enter-active {
+  transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1), transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.page-transition-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* Pure-CSS top loading bar shown during Inertia navigations
+   (toggled via the `is-navigating` class on <html>, see app.js) */
+html::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #36b3f5, #0079c4);
+  opacity: 0;
+  transition: width 0.4s ease, opacity 0.2s ease;
+  pointer-events: none;
+}
+html.is-navigating::before {
+  width: 70%;
+  opacity: 1;
+  transition: width 5s cubic-bezier(0.1, 0.6, 0.2, 1), opacity 0.2s ease;
+}
