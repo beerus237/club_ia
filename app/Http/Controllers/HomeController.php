@@ -34,7 +34,7 @@ class HomeController extends Controller
             ['value' => '98%', 'label' => 'Satisfaction'],
         ];
 
-        $executiveMembers = [
+         $executiveMembers = [
             [
                 'name' => 'DIMBONGO Henri Stéphane',
                 'position' => 'Président',
@@ -51,7 +51,7 @@ class HomeController extends Controller
                 'name' => 'LIZA Enone Ngoh Loice',
                 'position' => 'Secrétaire général',
                 'bio' => 'Elle coordonne les échanges, les documents et l’organisation du club avec précision et dynamisme.',
-                'photo_url' => '/images/membres/LIZA ENONE NGOH LOICE-Secrétaire General .jpg',
+                'photo_url' => '/images/membres/LIZA ENONE NGOH LOICE-Secretaire General .jpg',
             ],
             [
                 'name' => 'MOLADEL Munpubuyi Ivana Karla',
@@ -70,6 +70,30 @@ class HomeController extends Controller
                 'position' => 'Chef département Veille scientifique & technologique',
                 'bio' => 'Il veille sur les tendances, les innovations et les opportunités qui peuvent enrichir les projets du club.',
                 'photo_url' => '/images/membres/RAMADANG_TOKAM_PAUL_WILFRIED_Chef_Departement_Veille_Scientifique_Technologique.jpg',
+            ],
+            [
+                'name' => 'BRYAN NLEND Linkholn',
+                'position' => 'Chef département Infographie & Design',
+                'bio' => 'Il conçoit et diffuse les messages du club, en valorisant ses actions et en renforçant son image.',
+                'photo_url' => '/images/membres/BRYAN_NLEND_Biheguel_LINKHOLN_Chef_Departement_Infographie_Design.jpg',
+            ],
+            [
+                'name' => 'KOUONANG NJOUONANG Yves Thierry',
+                'position' => 'Chef département Marketing & Services',
+                'bio' => 'Il élabore les stratégies de communication et de marketing pour promouvoir le club et ses projets.',
+                'photo_url' => '/images/membres/KOUONANG NJOUONANG YVES THIERRY-Chef Departement Marketing et Services.jpg',
+            ],
+            [
+                'name' => 'TCHINDA DJATE Hurchill',
+                'position' => 'Chef département Formations Techniques',
+                'bio' => 'Il organise et encadre les formations techniques pour développer les compétences des membres du club.',                'photo_url' => '/images/membres/MOUKAM_TCHOUANGUE_MERVILLE_Chef_Departement_Formations_Techniques.jpg',
+                'photo_url' => '/images/membres/TCHINDA_DJATE_HURCHIL_Chef_Departement_Formations_Technique.jpg'
+            ],
+             [
+                'name' => 'TCHANTCHOU SANDJONG Steve Wilfried',
+                'position' => 'Chef département Recherche & Développement',
+                'bio' => 'Il coordonne les projets de recherche et d’innovation afin de promouvoir le développement de solutions technologiques au sein du club.',
+                'photo_url' => '/images/membres/TCHANTCHOU SANDJONG STEVE WILFRIED-Chef du Departement Recherche et Developpement .jpeg'
             ],
         ];
 
