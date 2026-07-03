@@ -75,7 +75,7 @@ class HomeController extends Controller
                 'name' => 'BRYAN NLEND Linkholn',
                 'position' => 'Chef département Infographie & Design',
                 'bio' => 'Il conçoit et diffuse les messages du club, en valorisant ses actions et en renforçant son image.',
-                'photo_url' => '/images/membres/BRYAN_NLEND_Biheguel_LINKHOLN_Chef_Departement_Infographie_Design.jpg',
+                'photo_url' => '/images/membres/BRYAN_NLEND_BIHEGUEL_LINKHOLN_Chef_Departement_Infographie_Design.jpg',
             ],
             [
                 'name' => 'KOUONANG NJOUONANG Yves Thierry',
@@ -93,7 +93,7 @@ class HomeController extends Controller
                 'name' => 'TCHANTCHOU SANDJONG Steve Wilfried',
                 'position' => 'Chef département Recherche & Développement',
                 'bio' => 'Il coordonne les projets de recherche et d’innovation afin de promouvoir le développement de solutions technologiques au sein du club.',
-                'photo_url' => '/images/membres/TCHANTCHOU SANDJONG STEVE WILFRIED-Chef du Departement Recherche et Developpement .jpeg'
+                'photo_url' => '/images/membres/TCHANTCHOU.jpeg'
             ],
         ];
 
